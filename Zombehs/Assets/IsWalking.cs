@@ -2,36 +2,7 @@
 using System.Collections;
 
 public class IsWalking : StateMachineBehaviour {
-	public float speed = 6f;
 
-	Vector3 movement;
-	Animator anim;
-	Rigidbody playerRigidbody;
-	int floorMask;
-	float camRayLength = 100f;
-
-	void Awake()
-	{
-		floorMask = LayerMask.GetMask ("Floor");
-		Animator = GetComponent <Animator> ();
-		playerRigidbody = GetComponent <Rigidbody> ();
-	}
-
-	void FixedUpdate ()
-	{
-		float h = Input.GetAxisRaw ("Horizontal");
-		float v = Input.GetAxisRaw ("Vertical");
-	
-	}
-
-	void Move (float h, float v)
-	{
-		movement.Set (h, 0f, v);
-
-		movement = movement.normalized * speed * Time.deltaTime;
-
-		playerRigidbody.MovePosition (Transform.position + movement);
-	}
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 	//
